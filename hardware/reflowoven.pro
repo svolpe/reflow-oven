@@ -1,4 +1,4 @@
-update=3/5/2017 8:57:03 AM
+update=3/13/2017 7:06:26 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -78,3 +78,13 @@ LibName30=valves
 LibName31=pspice
 LibName32=analog_devices
 LibName33=svolpe-custom
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceAjustPassiveValues=0
+LabSize=60
+ERC_TestSimilarLabels=1
