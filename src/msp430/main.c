@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include "msp430g2553.h"
-
+#include <math.h>
 
 //In uniarch there is no more signal.h to sugar coat the interrupts definition, so we do it here
 #define interrupt(x) void __attribute__((interrupt (x)))
@@ -63,7 +63,7 @@ typedef struct relayCMD {
 
 uartCMD _uartCmd;
 
-long tempCalibrated;
+
 
 
 void timer_init();
@@ -239,7 +239,7 @@ void setup_adc()
      * Note: ~<BIT> indicates that <BIT> has value zero
      */
 //    ADC10CTL0 = ADC10ON + ADC10SHT_0 + REFON +  ~REF2_5V + SREF_1;
-    ADC10CTL0 = ADC10ON + ADC10SHT_3 + SREF_0;
+    ADC10CTL0 = ADC10ON + ADC10SHT_3 + REFON + SREF_1;
 
     //   ~REFON -- Disable ADC reference generator
  //        * ~REF2_5V/
@@ -338,6 +338,9 @@ void process_cmd (uartCMD *cmd)
 {
     int8_t temperature[4];
     uint8_t count, selection, state;
+    volatile float tempCalibrated;
+
+
     if (cmd->status == received)
     {
         switch (cmd->cmd)
@@ -365,7 +368,7 @@ void process_cmd (uartCMD *cmd)
             case 't': //Get temperature
 
                 tempCalibrated = 0;
-                for (count = 0; count < 10; count++)
+ /*               for (count = 0; count < 10; count++)
                 {
                         ADC10CTL0 |= ENC + ADC10SC;               // Sampling and conversion start
                     // Loop until ADC10IFG is set indicating ADC conversion complete
@@ -376,9 +379,19 @@ void process_cmd (uartCMD *cmd)
                         tempCalibrated += ADC10MEM;
                  }
                  tempCalibrated /= 10;
-                 int_to_str(tempCalibrated, temperature);
-                 sendStr(temperature);
-                 break;
+ */
+                ADC10CTL0 |= ENC + ADC10SC;               // Sampling and conversion start
+            // Loop until ADC10IFG is set indicating ADC conversion complete
+                while ((ADC10CTL0 & ADC10IFG) == 0);
+
+            // Read ADC conversion result from ADC10MEM
+            //__delay_cycles(1000);
+
+                tempCalibrated = (float) ADC10MEM;
+                tempCalibrated = round((float) tempCalibrated * (1.5/1024) * 200 * 10); //Convert to temp and convert to 10ths (x10) for better resolution after rounding
+                int_to_str((int) tempCalibrated, temperature);
+                sendStr(temperature);
+                break;
 
             case 'l': //Set LED
                 if (cmd->size > 2)
