@@ -32,6 +32,7 @@ LIBS:valves
 LIBS:pspice
 LIBS:analog_devices
 LIBS:svolpe-custom
+LIBS:diode
 LIBS:reflowoven-cache
 EELAYER 26 0
 EELAYER END
@@ -98,7 +99,7 @@ F 3 "" H 2200 5900 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R4
+L R-RESCUE-reflowoven R4
 U 1 1 50FB89E1
 P 2450 5000
 F 0 "R4" V 2530 5000 50  0000 C CNN
@@ -168,29 +169,29 @@ TDIO
 Text Label 2050 5200 0    60   ~ 0
 TCK
 $Comp
-L LED-RESCUE-reflowoven D1
+L LED D1
 U 1 1 50FC1D40
-P 1450 4000
-F 0 "D1" H 1450 4100 50  0000 C CNN
-F 1 "LED" H 1450 3900 50  0000 C CNN
-F 2 "LEDs:LED_D4.0mm" H 1450 4000 60  0001 C CNN
-F 3 "" H 1450 4000 60  0001 C CNN
-	1    1450 4000
-	-1   0    0    1   
+P 1500 4000
+F 0 "D1" H 1500 4100 50  0000 C CNN
+F 1 "LED" H 1500 3900 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 1500 4000 60  0001 C CNN
+F 3 "" H 1500 4000 60  0001 C CNN
+	1    1500 4000
+	1    0    0    -1  
 $EndComp
 $Comp
-L LED-RESCUE-reflowoven D2
+L LED D2
 U 1 1 50FC1D4F
-P 1450 4450
-F 0 "D2" H 1450 4550 50  0000 C CNN
-F 1 "LED" H 1450 4350 50  0000 C CNN
-F 2 "LEDs:LED_D4.0mm" H 1450 4450 60  0001 C CNN
-F 3 "" H 1450 4450 60  0001 C CNN
-	1    1450 4450
-	-1   0    0    1   
+P 1500 4450
+F 0 "D2" H 1500 4550 50  0000 C CNN
+F 1 "LED" H 1500 4350 50  0000 C CNN
+F 2 "LEDs:LED_D4.0mm" H 1500 4450 60  0001 C CNN
+F 3 "" H 1500 4450 60  0001 C CNN
+	1    1500 4450
+	1    0    0    -1  
 $EndComp
 $Comp
-L R R2
+L R-RESCUE-reflowoven R2
 U 1 1 50FC1D77
 P 2050 4000
 F 0 "R2" V 2130 4000 50  0000 C CNN
@@ -201,7 +202,7 @@ F 3 "" H 2050 4000 60  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L R R3
+L R-RESCUE-reflowoven R3
 U 1 1 50FC1D9D
 P 2050 4450
 F 0 "R3" V 2130 4450 50  0000 C CNN
@@ -253,7 +254,7 @@ F 3 "" H 5500 4000 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C5
+L C-RESCUE-reflowoven C5
 U 1 1 51008DD5
 P 5300 3750
 F 0 "C5" H 5350 3850 50  0000 L CNN
@@ -340,7 +341,7 @@ F 3 "" H 1950 2500 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R1
+L R-RESCUE-reflowoven R1
 U 1 1 58BC3AA3
 P 1650 2400
 F 0 "R1" V 1730 2400 50  0000 C CNN
@@ -516,11 +517,7 @@ Wire Wire Line
 	2350 5400 2350 5200
 Wire Wire Line
 	2350 5200 1800 5200
-Wire Wire Line
-	2450 5150 2450 5450
 Connection ~ 2450 5300
-Wire Wire Line
-	2450 4750 2050 4750
 Wire Wire Line
 	2050 5850 2450 5850
 Wire Wire Line
@@ -536,18 +533,12 @@ Wire Wire Line
 	3850 6950 3850 6850
 Connection ~ 3850 6850
 Wire Wire Line
-	1650 4000 1900 4000
-Wire Wire Line
-	1650 4450 1900 4450
-Wire Wire Line
-	1250 4000 1100 4000
+	1350 4000 1100 4000
 Wire Wire Line
 	1100 4000 1100 4600
 Wire Wire Line
-	1100 4450 1250 4450
+	1100 4450 1350 4450
 Connection ~ 1100 4450
-Wire Wire Line
-	2200 4000 3200 4000
 Wire Wire Line
 	3300 5600 3050 5600
 Wire Wire Line
@@ -559,20 +550,14 @@ Wire Wire Line
 Connection ~ 4900 3550
 Connection ~ 5300 3550
 Wire Wire Line
-	5300 3950 5650 3950
-Wire Wire Line
 	5500 4000 5500 3950
 Connection ~ 5500 3950
-Wire Wire Line
-	2200 4450 2700 4450
 Wire Wire Line
 	3300 4400 3200 4400
 Wire Wire Line
 	3200 4400 3200 4000
 Wire Wire Line
 	2700 5000 3300 5000
-Wire Wire Line
-	2450 4750 2450 4850
 Wire Wire Line
 	1950 1400 2850 1400
 Wire Wire Line
@@ -581,11 +566,7 @@ Wire Wire Line
 	2200 1600 1950 1600
 Wire Wire Line
 	1950 2000 1950 2500
-Wire Wire Line
-	1800 2400 1950 2400
 Connection ~ 1950 2400
-Wire Wire Line
-	1350 2400 1500 2400
 Wire Wire Line
 	1350 2400 1350 2350
 Connection ~ 3800 3250
@@ -690,10 +671,6 @@ Wire Wire Line
 Wire Wire Line
 	6950 3200 6550 3200
 Wire Wire Line
-	5300 3600 5300 3550
-Wire Wire Line
-	5300 3900 5300 3950
-Wire Wire Line
 	6400 3750 6950 3750
 Wire Wire Line
 	6500 3900 6950 3900
@@ -727,7 +704,7 @@ Wire Wire Line
 Wire Wire Line
 	2650 2550 2650 2600
 $Comp
-L GND #PWR011
+L GND-RESCUE-reflowoven #PWR011
 U 1 1 58BE58A9
 P 2650 3000
 F 0 "#PWR011" H 0   -350 50  0001 C CNN
@@ -746,7 +723,7 @@ Wire Notes Line
 Text Notes 6930 960  0    60   ~ 0
 Vo = 1.25V x 
 $Comp
-L +3.3V #PWR012
+L +3.3V-RESCUE-reflowoven #PWR012
 U 1 1 58D854D1
 P 2800 1150
 F 0 "#PWR012" H -150 200 50  0001 C CNN
@@ -757,7 +734,7 @@ F 3 "" H -150 350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR013
+L +3.3V-RESCUE-reflowoven #PWR013
 U 1 1 58D85715
 P 6850 900
 F 0 "#PWR013" H 0   -50 50  0001 C CNN
@@ -768,18 +745,18 @@ F 3 "" H 0   100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR014
+L +3.3V-RESCUE-reflowoven #PWR014
 U 1 1 58D86E74
 P 2050 4750
 F 0 "#PWR014" H -550 350 50  0001 C CNN
-F 1 "+3.3V" H 2065 4923 50  0000 C CNN
+F 1 "+3.3V" H 2200 4850 50  0000 C CNN
 F 2 "" H -550 500 50  0001 C CNN
 F 3 "" H -550 500 50  0001 C CNN
 	1    2050 4750
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR015
+L +3.3V-RESCUE-reflowoven #PWR015
 U 1 1 58D86F28
 P 4900 3450
 F 0 "#PWR015" H -50 -150 50  0001 C CNN
@@ -789,4 +766,22 @@ F 3 "" H -50 0   50  0001 C CNN
 	1    4900 3450
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1800 4000 1650 4000
+Wire Wire Line
+	1800 4450 1650 4450
+Wire Wire Line
+	2300 4450 2700 4450
+Wire Wire Line
+	3200 4000 2300 4000
+Wire Wire Line
+	2450 4750 2050 4750
+Wire Wire Line
+	2450 5250 2450 5450
+Wire Wire Line
+	5300 3950 5650 3950
+Wire Wire Line
+	1350 2400 1400 2400
+Wire Wire Line
+	1900 2400 1950 2400
 $EndSCHEMATC

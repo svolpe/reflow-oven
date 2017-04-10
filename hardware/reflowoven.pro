@@ -1,4 +1,4 @@
-update=3/24/2017 5:47:46 PM
+update=4/9/2017 10:49:14 AM
 version=1
 last_client=kicad
 [cvpcb]
@@ -41,6 +41,16 @@ LibName11=valves
 LibName12=connectors-svolpe
 LibName13=USB-shield
 LibName14=ssop28
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceAjustPassiveValues=0
+LabSize=60
+ERC_TestSimilarLabels=1
 [eeschema]
 version=1
 LibDir=../../svolpe-custom-kicad-lib
@@ -78,13 +88,4 @@ LibName30=valves
 LibName31=pspice
 LibName32=analog_devices
 LibName33=svolpe-custom
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceAjustPassiveValues=0
-LabSize=60
-ERC_TestSimilarLabels=1
+LibName34=diode
