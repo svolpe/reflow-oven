@@ -2464,7 +2464,7 @@
     (property "Value" "100nF" (id 1) (at 73.66 30.48 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Capacitors_SMD:C_0603" (id 2) (at 74.93 30.7848 0)
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (id 2) (at 74.93 30.7848 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 71.12 31.75 0)
@@ -2676,7 +2676,7 @@
       (reference "#PWR0107") (unit 1) (value "+3.3V") (footprint "")
     )
     (path "/32dae22d-3d38-4916-a6c3-5108b29835c8"
-      (reference "C1") (unit 1) (value "100nF") (footprint "Capacitors_SMD:C_0603")
+      (reference "C1") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_0603_1608Metric")
     )
     (path "/00000000-0000-0000-0000-000050fb8dfc"
       (reference "C2") (unit 1) (value "1nF") (footprint "Capacitors_SMD:C_0603")
@@ -2783,6 +2783,9 @@
     (path "/00000000-0000-0000-0000-000058bd092c"
       (reference "U3") (unit 1) (value "LM317") (footprint "Package_TO_SOT_THT:TO-220-3_Vertical")
     )
+    (path "/00000000-0000-0000-0000-000058bc1d4b/06e8525a-7bab-4869-ac74-e17ab11d8f41"
+      (reference "U4") (unit 1) (value "ULN2003A") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+    )
     (path "/00000000-0000-0000-0000-000058bc1d4b/00000000-0000-0000-0000-000058bc28ba"
       (reference "U5") (unit 1) (value "MCHRM3H") (footprint "svolpe-custom-mod:MCHRM3H")
     )
@@ -2794,9 +2797,6 @@
     )
     (path "/00000000-0000-0000-0000-000058bc1d4b/00000000-0000-0000-0000-000058bc28d6"
       (reference "U8") (unit 1) (value "MCHRM3H") (footprint "svolpe-custom-mod:MCHRM3H")
-    )
-    (path "/00000000-0000-0000-0000-000058bc1d4b/06e8525a-7bab-4869-ac74-e17ab11d8f41"
-      (reference "U?") (unit 1) (value "ULN2003A") (footprint "Housings_SOIC:SOIC-16_3.9x9.9mm_Pitch1.27mm")
     )
     (path "/00000000-0000-0000-0000-000050fb9344"
       (reference "X1") (unit 1) (value "CRYSTAL") (footprint "Crystals:Crystal_Round_d1.0mm_Vertical")
